@@ -16,21 +16,22 @@ module SSM_tb;
 	$dumpvars(0, ulaon);
     en = 1'b1;
     clr = 1; #10;
-    clr = 0;
+    clr = 0; #10;
 
-    Atb = 8'd55; Btb = 8'd10; //Primeiro Iput
+    selectb = 3'b111; // Multiplicacao
+    Atb = 8'd55; Btb = 8'd100; #10;
+    Atb = 8'd200; Btb = 8'd3; #10;
+    Atb = 8'd50; Btb = 8'd50; #10;
 
-    selectb = 3'b111; #20; // Multiplicacao
-    Atb = 8'd10; Btb = 8'd90; #20;
-    Atb = 8'd100; Btb = 8'd254; #20;
+    selectb = 3'b000; // Soma
+    Atb = 8'd55; Btb = 8'd100; #10;
+    Atb = 8'd200; Btb = 8'd3; #10;
+    Atb = 8'd50; Btb = 8'd50; #10;
 
-    selectb = 3'b000; #20; // Soma
-    Atb = 8'd100; Btb = 8'd254; #20;
-    Atb = 8'd10; Btb = 8'd89; #20;
-
-    selectb = 3'b001; #20; // Soma
-    Atb = 8'd251; Btb = 8'd50; #20;
-    Atb = 8'd255; Btb = 8'd255; #20;
+    selectb = 3'b001; // Soma
+    Atb = 8'd55; Btb = 8'd100; #10;
+    Atb = 8'd200; Btb = 8'd3; #10;
+    Atb = 8'd50; Btb = 8'd50; #10;
     $finish;
   end
 
